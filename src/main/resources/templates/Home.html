@@ -4,15 +4,33 @@
 <body>
 <div class="container">
     <div>
-        <h1>Hello Spring</h1>
+        <h1>회원관리</h1>
         <p>회원 기능</p>
         <p>
+            <button th:onclick="|location.href='+@{/members/new}'|" type="submit">등록</button>
+
             <a href="/members/new">회원 가입</a>
             <a href="/members/update">회원 이름수정</a>
+            <a href="/members/delete">회원 이름삭제</a>
             <a href="/members">회원 목록</a>
         </p>
+    </div>
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>이름</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="member : ${members}">
+                <td th:text="${member.id}"></td>
+                <td th:text="${member.name}"></td>
+            </tr>
+            </tbody>
 
-
+        </table>
     </div>
 </div>
 </body>

@@ -43,10 +43,23 @@ public class MemberController {
     @PostMapping("/members/update")
     public String update(MemberForm form) {
         Member member = new Member();
+        member.setId(Long.parseLong(form.getUid()));
         member.setName(form.getName());
+        memberService.update(member);
+        return "redirect:/";
+    }
 
-        memberService.join(member);
 
+    @GetMapping("/members/delete")
+    public String deleteForm() { return "members/deleteMemberForm";
+    }
+
+    @PostMapping("/members/delete")
+    public String delete(MemberForm form) {
+        Member member = new Member();
+        member.setId(Long.parseLong(form.getUid()));
+        member.setName(form.getName());
+        memberService.delete(member);
         return "redirect:/";
     }
 

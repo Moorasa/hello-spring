@@ -24,6 +24,19 @@ public class MemberService {
         memberRepository.save(member);
         return member.getId();
     }
+    public long update(Member member) {
+        validateDuplicateMember(member);
+        memberRepository.update(member);
+        return member.getId();
+
+    }
+
+    public long delete(Member member) {
+        memberRepository.delete(member);
+        return member.getId();
+
+    }
+
 
     private void validateDuplicateMember(Member member) {
         memberRepository.findByName(member.getName())
