@@ -57,7 +57,7 @@ public class MemberController {
     @PostMapping("/members/delete")
     public String delete(MemberForm form) {
         Member member = new Member();
-        member.setId(Long.parseLong(form.getUid()));
+//        member.setId(Long.parseLong(form.getUid()));  키를 잡고 삭제 할게 아니라 h2 db사용시 필요 없음
         member.setName(form.getName());
         memberService.delete(member);
         return "redirect:/";

@@ -17,14 +17,14 @@ public class HomeController {
         this.memberService = memberService;
     }
 
-//    @GetMapping("/")
-//    public String home() {
-//        return "home";
-//    }
     @GetMapping("/")
-    public String list(Model model) {
-        List<Member> members = memberService.findMembers();
-        model.addAttribute("members", members);
+    public String home() {
         return "home";
     }
+//    @GetMapping("/")
+//    public String list(Model model) {
+//        List<Member> members = memberService.findMembers();
+//        model.addAttribute("members", members);
+//        return "home";
+//    }
 }
