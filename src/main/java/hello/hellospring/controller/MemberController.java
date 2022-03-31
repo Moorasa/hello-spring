@@ -5,16 +5,17 @@ import hello.hellospring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
+import org.springframework.web.bind.annotation.PutMapping;
 
 @Controller
 public class MemberController {
 
     private final MemberService memberService;
-
 
     @Autowired
     public MemberController(MemberService memberService) {
@@ -31,7 +32,8 @@ public class MemberController {
         Member member = new Member();
         member.setName(form.getName());
 
-        memberService.join(member);
+        long id = memberService.join(member);
+        System.out.println("created id -> "+id);
 
         return "redirect:/";
     }
