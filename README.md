@@ -105,7 +105,7 @@ ide에서 설정을 바꿔 직접 사용 파일명 지정
   - Edit configration -> action proifle -> application[환경별]
 
 ?? ide에서 설정한 application 환경별 값이 운영 서버에 등록 할때도 같이 반영이 됩니까?
-
+?? context-path 변경으로 페이지가 연결이 안됩니다. 상대 경로로 바꿔도 index 페이지 위치가 바뀌어 templates 내 파일을 못 가져요 오네요? 어떤 방법으로 일관 처리 하면 좋겠습니까? 
 
 
 2. 찾았지만 확인이 안된 방법
