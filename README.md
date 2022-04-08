@@ -122,5 +122,7 @@ Gradle 실행
  gradle clean bootRun
  gradle clean bootRun -profile=dev  
  gradle clean bootRun -pprofile=prod
+ 
+ps. dev port 8083은 전에 톰캣 따로 설치 햇을때 포트를 8082로 정해 둔거 같습니다. 포트 변경 하는 방법을 잊어서 부득이하게 변경 햇씁니다.  
 ```
 
