@@ -9,10 +9,11 @@
         <p>
             <button th:onclick="|location.href='+@{/members/new}'|" type="submit">등록이요</button>
 
-            <a href="../members/new", rel="'stylesheet">회원 가입</a>
-            <a href="../members/update", rel="'stylesheet">회원 이름수정</a>
-            <a href="../members/delete", rel="'stylesheet">회원 이름삭제</a>
-            <a href="../members", rel="'stylesheet">회원 목록</a>
+<!--            <a th:href="@{/members/new", rel="'stylesheet">회원 가입</a>-->
+            <a href="/members/new" th:href="@{/members/new}"> 회원 가입</a>
+            <a href="/members/update" th:href="@{/members/update}">회원 이름수정</a>
+            <a href="/members/delete" th:href="@{/members/delete}">회원 이름삭제</a>
+            <a href="/members" th:href="@{/members/}">회원 목록</a>
         </p>
     </div>
     <div>
