@@ -93,3 +93,34 @@ server:
 - local의 포트는 8081이며 context-path는 /api/v1/local 입니다 
 - dev의 포트는 8082이며 context-path는 /api/v1/dev 입니다
 ```
+### Answer
+환경 변수 적용 하는 방법 2가지를 찾았습니다. 
+```text
+1. 현재 적용 된 방법
+apoplication 파일을 복사 하여 3가지 형태(dev,prod,local)로 생성
+ide에서 설정을 바꿔 직접 사용 파일명 지정
+ community version
+  - Edit configration -> modify option -> add vm option,[활성화] -> -Dspring.profiles.active=[환경별]  
+ Ultimate verion 
+  - Edit configration -> action proifle -> application[환경별]
+
+?? ide에서 설정한 application 환경별 값이 운영 서버에 등록 할때도 같이 반영이 됩니까?
+
+2. 찾았지만 확인이 안된 방법
+build.gradle 내용추가
+ ext.profile = (!project.hasProperty('pfofile') || ! profile) ? 'dev' : profile
+ sourceSets {
+          main { 
+             resoucres {
+                     srcDirs " src/main/resources", " src/main/resources-${profile}"
+                     }
+            }
+          }   
+}
+
+Gradle 실행
+ gradle clean bootRun
+ gradle clean bootRun -profile=dev  
+ gradle clean bootRun -pprofile=prod
+```
+
