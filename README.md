@@ -105,7 +105,6 @@ ide에서 설정을 바꿔 직접 사용 파일명 지정
   - Edit configration -> action proifle -> application[환경별]
 
 ?? ide에서 설정한 application 환경별 값이 운영 서버에 등록 할때도 같이 반영이 됩니까?
-?? context-path 변경 하면 index page는 연결 되는데 그 하위 페이지는 다 오류 납니다. 이건 자동으로 되는건데 안된건가요? 아니면 다른 설정이 필요 할까요?
 
 
 
