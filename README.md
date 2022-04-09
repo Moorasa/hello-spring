@@ -127,3 +127,21 @@ Gradle 실행
 ps. dev port 8083은 전에 톰캣 따로 설치 햇을때 포트를 8082로 정해 둔거 같습니다. 포트 변경 하는 방법을 잊어서 부득이하게 변경 햇씁니다.  
 ```
 
+### Reply
+
+**IntelliJ Community의 경우**
+VM Option에 추가하기
+-Dspring.profiles.active={profile}
+
+**IntelliJ Ultilmate의 경우**
+![img.png](images/img2.png)
+
+#### 운영 실행시
+
+운영시에는 빌드된 JAR 파일을 가지고 실행하기 때문에 보통 다음과 같이 실행합니다
+```shell
+java -jar -Dspring.profiles.active=dev ./build/libs/hello-spring-0.0.1-SNAPSHOT.jar
+java -jar -Dspring.profiles.active=prod ./build/libs/hello-spring-0.0.1-SNAPSHOT.jar
+```
+터미널을 열고 실행해보면 각 프로파일별로 실행됩니다
+![img.png](images/img.png)
